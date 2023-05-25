@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>createUser</title>
+</head>
+<body>
+<div align="center">
+  <h1>Create user</h1>
+  </br>  </br>
+  <form th:method="POST" th:action="@{/user(id=${person.getId()})}" th:object="${person}" >
+
+    <label for="firstName">Enter firstName: </label>
+    <input type="text" th:field="*{firstName}" id="firstName"/>
+    <br/>
+    <label for="lastName">Enter lastName: </label>
+    <input type="text" th:field="*{lastName}" id="lastName"/>
+    <br/>
+    <label for="age">Enter age: </label>
+    <input type="text" th:field="*{age}" id="age"/>
+    <br/>
+
+    <label for="city">Enter city: </label>
+    <input type="text" th:field="*{userAddress.city}" id="city"/>
+    <br/>
+    <label for="street">Enter street: </label>
+    <input type="text" th:field="*{userAddress.street}" id="street"/>
+    <br/>
+    <label for="house">Enter house: </label>
+    <input type="text" th:field="*{userAddress.house}" id="house"/>
+    <br/>
+    </br>  </br>
+    <button type="submit">Save</button>
+  </form>
+</div>
+</body>
+</html>
